@@ -1,0 +1,14 @@
+{
+  "name": "devtool",
+  "version": "1.0.0",
+  "description": "devtool",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "xiaoyuzhzh",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^2.0.4"
+  }
+}
