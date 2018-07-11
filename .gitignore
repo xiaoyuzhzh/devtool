@@ -1,2 +1,4 @@
 node_modules
 .vscode
+devtool-win32-x64
+dist

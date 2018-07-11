@@ -4,11 +4,13 @@
   "description": "devtool",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "dist": "electron-builder"
   },
   "author": "xiaoyuzhzh",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^2.0.4"
+    "electron": "^2.0.4",
+    "electron-builder": "^20.11.1"
   }
 }

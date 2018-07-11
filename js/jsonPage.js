@@ -1,0 +1,1 @@
+window.opener.postMessage("json is opened");

@@ -1,4 +1,8 @@
-const {app, BrowserWindow} = require('electron')
+const {app, BrowserWindow, Menu} = require('electron')
+const {ipcMain} = require('electron')
+ipcMain.on('send-message', (event, arg) => {
+  event.sender.send('reply-message', 'hello world')
+})
   
 let win;
 
@@ -11,7 +15,7 @@ function createWindow () {
     win.loadFile('index.html')
 
     // 打开开发者工具
-    // win.webContents.openDevTools();
+    win.webContents.openDevTools();
 
     //进度条图标可以用这个展示
     win.setProgressBar(0.5)
@@ -23,6 +27,21 @@ function createWindow () {
         // 与此同时，你应该删除相应的元素。
         win = null
     })
+
+    const template = [                              // 创建菜单模板
+      {
+          label: '查看',
+          submenu: [
+              {label: '竖屏', type: 'radio', checked: true},      // type 属性让菜单为 radio 可选
+              {label: '横屏', type: 'radio', checked: false},
+              {label: '重载',role:'reload'},
+              {label: '退出',role:'quit'},
+          ]
+      }
+  ]
+  
+  const menu = Menu.buildFromTemplate(template);  // 通过模板返回菜单的数组
+  Menu.setApplicationMenu(menu);                  // 将该数组设置为菜单
 
     
 }
