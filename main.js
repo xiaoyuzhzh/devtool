@@ -12,7 +12,9 @@ function createWindow () {
     win = new BrowserWindow({width: 800, height: 600})
 
     // 然后加载应用的 index.html。
-    win.loadFile('index.html')
+    // 加载应用的 index.html
+    const indexPageURL = `file://${__dirname}/views/index.html`;
+    win.loadURL(indexPageURL);
 
     // 打开开发者工具
     win.webContents.openDevTools();
